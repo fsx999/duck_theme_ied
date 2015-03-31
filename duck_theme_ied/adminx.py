@@ -65,6 +65,12 @@ class MainDashboard(object):
                       'groups': ('edition_mail',)},
                      ]},
 
+                {"type": "qbutton",
+                 "title": "Gestion des salles",
+                 "btns": [
+                     {'title': "Gestion des salles", 'url': 'xadmin:salle_dashboard'},
+                      #'groups': ('edition_mail',)},
+                     ]},
                ]]
     site_title = 'Backoffice'
     title = 'Accueil'
