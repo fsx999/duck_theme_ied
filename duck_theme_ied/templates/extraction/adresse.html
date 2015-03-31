@@ -1,0 +1,25 @@
+<div class="col-xs-6">
+<div class="etiquette">
+    <div class="expediteur">
+        IED PARIS 8 <br>
+        2 rue de la liberté <br>
+        93526 - St Denis CEDEX <br>
+    </div>
+    <div class="destinataire">
+        {% if etudiant.cod_sex_etu == 'M' %}Mr{% else %}Mme{% endif %}
+        {{ etudiant.lib_nom_pat_ind }}
+        {{ etudiant.lib_nom_usu_ind }}
+        {{ etudiant.lib_pr1_ind }}
+        <br>
+    {% with adresse=etudiant.get_dico_adresse %}
+        {{ adresse.lib_ad1 }}<br>
+        {% if  adresse.lib_ad2  %}{{ adresse.lib_ad2 }}<br>{% endif %}
+        {% if  adresse.lib_ad3  %}{{ adresse.lib_ad3 }}<br>{% endif %}
+        {% if adresse.cod_bdi %}{{ adresse.cod_bdi }}
+        {{ adresse.lib_ach }}<br>{% endif %}
+        {% if  adresse.lib_ade  %}{{ adresse.lib_ade }}<br>{% endif %}
+        {{ adresse.lib_pay }}
+    {% endwith %}
+    </div>
+</div>
+</div>
