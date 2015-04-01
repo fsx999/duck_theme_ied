@@ -32,7 +32,7 @@ class MainDashboard(object):
                 {"type": "qbutton",
                  "title": "Informations",
                  "btns": [
-                     {'title': "Statistique", 'url': 'statistiques'},
+                     {'title': "Statistique", 'url': 'xadmin:statistiques'},
                      {'title': "Dates et tarifs", 'url': 'datesandtarifs'}, ]},
                 {"type": "qbutton",
                  "title": "Gestion financière",
