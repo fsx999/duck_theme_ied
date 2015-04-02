@@ -7,7 +7,7 @@ from django.utils.translation import ugettext as _
 from xadmin.sites import site
 from xadmin.filters import SEARCH_VAR
 from xadmin.views import BaseAdminPlugin, CommAdminView
-
+import copy
 
 class IEDPlugin(BaseAdminPlugin):
     urls = [
@@ -21,9 +21,9 @@ class IEDPlugin(BaseAdminPlugin):
 
     # Block Views
     def block_top_navbar(self, context, nodes):
-        urls = self.urls
-        if self.request.user.is_superuser and len(urls) == 3:
-            urls.append({'name': 'Admin', 'url':'/admin'})
+        urls = copy.deepcopy(self.urls)
+        if self.request.user.is_superuser:
+            urls.append({'name': 'Admin', 'url': '/admin'})
         nodes.append(
             loader.render_to_string('xadmin_plugins/comm.top.lien.html', {'urls': urls}))
 
