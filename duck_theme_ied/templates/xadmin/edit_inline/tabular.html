@@ -36,10 +36,12 @@
 {% endblock formset_content %}
 
 {% block formset_empty %}
+
+
   <tr class="formset-row">
     {% crispy formset.formset.empty_form formset.formset.helper %}
     {% if formset.formset.can_delete %}
-      <td><a class="delete-row"><i class="fa fa-times"></i></a></td>
+      <td><a class="delete-row"><i class="fa fa-times"></i></a>{{ formset.formset.can_add }}azerazer</td>
     {% endif %}
   </tr>
 {% endblock formset_empty %}
