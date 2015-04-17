@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load lib_inscription floppyforms %}
 {% load static from staticfiles %}
-{% block title %} Inscription IED {% endblock %}
 {% block javascript %}
     <script src="{% static "browser-detection/browser-detection.js" %}" type="text/javascript"></script>
     <script type="text/javascript">
@@ -48,6 +47,10 @@
         <div class="alert alert-info">
             Il est <strong>obligatoire</strong> de disposer d'un compte personnel pour poursuivre la
             procédure de préinscription administrative.
+        </div>
+        <div class="alert alert-danger">
+            Si vous étiez inscrit(e) à l'IED pour <strong>l'année en cours</strong>, veuillez utiliser vos identifiants et mot de passe de la plateforme pour vous connectez.<br>
+            Vous <strong>ne devez pas</strong> créer de compte.
         </div>
         <a class="btn btn-primary" href="{% url 'registration_register' %}">Créer mon compte personnel</a>
 
