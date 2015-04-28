@@ -67,10 +67,11 @@
         <div class="navbar navbar-inverse">
             <div class="container-fluid">
             <div class="collapse navbar-collapse">
-
+                    {% if user.is_authenticated and request.resolver_match.kwargs.pk %}
                     <div class="navbar-header active">
-                        <a href="{% url "accueil" %}" class="navbar-brand active"><i class="glyphicon glyphicon-home"></i> Accueil</a>
+                        <a href="{% url "accueil" request.resolver_match.kwargs.pk %}" class="navbar-brand active"><i class="glyphicon glyphicon-home"></i> Accueil</a>
                     </div>
+                    {% endif %}
                     <ul class="nav navbar-nav">
                         <li class="active "></li>
                         <li class="divider-vertical"></li>
