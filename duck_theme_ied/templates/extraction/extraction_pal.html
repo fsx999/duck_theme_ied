@@ -15,8 +15,10 @@
 
         <tr>
             <td>{{ etape.label }} / {{ etape.cod_etp }}</td>
-            <td><a href="{% url "extraction_etiquettes" etape.cod_etp %}"
-                   class="btn btn-primary">Etiquettes</a>
+            <td><a href="{% url "extraction_etiquettes" etape.cod_etp %}?cod_anu=2014"
+                   class="btn btn-primary">Etiquettes 2014</a>
+                <a href="{% url "extraction_etiquettes" etape.cod_etp %}"
+                   class="btn btn-primary">Etiquettes 2015</a>
             </td>
             <td>{% if etape.note_maste %}<a href="{% url "xadmin:extraction_note" etape.cod_etp %}" class="btn btn-primary">Note</a> {% endif %}</td>
         </tr>
